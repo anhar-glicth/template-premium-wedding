@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+    --color-brand-gold: #D4AF37;
+    --color-brand-cream: #F9F6EE;
+    --color-brand-emerald: #043927;
+    --color-brand-brown: #2C1810;
+
+    --font-serif: "Playfair Display", serif;
+    --font-cursive: "Great Vibes", cursive;
+}
+
+@layer base {
+    body {
+        @apply font-sans bg-brand-cream text-brand-emerald;
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .ornament-gold {
+        @apply text-brand-gold opacity-40;
+    }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
